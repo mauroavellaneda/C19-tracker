@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Corona tracker usign Chart-js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Versions:
+Chart.js: ^2.9.4
+React-chartjs-2: ^2.11.1
+
 
 ## Available Scripts
 
