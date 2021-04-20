@@ -5,6 +5,15 @@ Chart.js: ^2.9.4 <br/>
 React-chartjs-2: ^2.11.1
 
 
+### Acknowledgement
+
+Credit to the best
+
+- [Adrian Hajdin](https://github.com/adrianhajdin)
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
