@@ -5,6 +5,7 @@ import { fetchData } from "./api";
 
 const App = () => {
   const [data, setData] = React.useState([]);
+  const [country, setCountry] = React.useState("");
 
   React.useEffect(() => {
     const result = async () => {
@@ -14,11 +15,17 @@ const App = () => {
     result();
   }, []);
 
+  const handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country);
+    setCountry(country);
+    setData(fetchedData);
+  };
+
   return (
     <div className={styles.container}>
       <Cards data={data} />
-      {/* <Countries /> */}
-      <Charts data={data}/>
+      <Countries handleCountryChange={handleCountryChange} />
+      <Charts data={data} country={country} />
     </div>
   );
 };

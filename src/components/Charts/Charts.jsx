@@ -14,7 +14,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
     };
 
     fetchAPI();
-  });
+  }, []);
 
   const lineChart = dailyData[0] ? (
     <Line
@@ -41,7 +41,32 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
 
-  return <div className={styles.container}>{lineChart}</div>;
+  const barChart = confirmed ? (
+    <Bar
+      data={{
+        labels: ["Infected", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "People",
+            backgroundColor: [
+              "rgba(0,0,205,0.5)",
+              "rgba(0,250,0,0.5)",
+              "rgba(250,0,0,0.5)",
+            ],
+            data: [confirmed.value, recovered.value, deaths.value],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: false },
+        title: { display: true, text: `Current state in ${country}` },
+      }}
+    />
+  ) : null;
+
+  return (
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
+  );
 };
 
 export default Charts;

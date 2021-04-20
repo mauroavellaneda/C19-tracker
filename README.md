@@ -1,7 +1,7 @@
-# Corona tracker usign Chart-js
+# Covid-19 tracker usign Chart-js
 
 Versions:
-Chart.js: ^2.9.4
+Chart.js: ^2.9.4 <br/>
 React-chartjs-2: ^2.11.1
 
 
